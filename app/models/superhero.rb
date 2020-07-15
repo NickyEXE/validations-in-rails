@@ -14,10 +14,6 @@ class Superhero < ApplicationRecord
     # validates_with is useful
     # for when you have a validation class shared between multiple models
 
-        def nemeses
-            byebug
-            Fight.where('aggressor_id = ? OR defender_id = ?', id, id)
-        end
 
     private
 
