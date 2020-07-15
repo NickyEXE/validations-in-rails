@@ -4,6 +4,20 @@
 <p>Power Level: <%= "💪"*@superhero.power_level %></p>
 <p><%= @superhero.good ? "This superhero stands on the side of justice" : "This superhero might be an anti-hero sometimes in the 90s, or might have some heel turns." %></p>
 
+<h1>Fights</h1>
+<ul>
+<% @superhero.attackers.each do |superhero| %>
+    <li><%= link_to superhero.name, superhero %></li>
+<% end%>
+</ul>
+
+<h1>Pick a fight!</h1>
+<%= form_for @fight do |f| %>
+    <%= f.collection_select :defender_id, Superhero.all, :id, :name %>
+    <%= f.hidden_field :aggressor_id, value: @superhero.id %>
+    <%= f.submit %>
+<% end %>
+
 
 <%= link_to "Edit this Superhero", edit_superhero_path(@superhero) %>
 <%= link_to "See All Superheroes", superheros_path %>

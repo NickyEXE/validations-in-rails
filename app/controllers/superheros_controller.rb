@@ -7,6 +7,7 @@ class SuperherosController < ApplicationController
     end
 
     def show
+        @fight = Fight.new
         render 'show'
     end
 
