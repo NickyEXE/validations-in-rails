@@ -4,6 +4,21 @@
 <p>Power Level: <%= "💪"*@superhero.power_level %></p>
 <p><%= @superhero.good ? "This superhero stands on the side of justice" : "This superhero might be an anti-hero sometimes in the 90s, or might have some heel turns." %></p>
 
+<h1>Partners!</h1>
+<ul>
+<% (@superhero.sidekicks + @superhero.main_characters).each do |superhero| %>
+    <li><%= link_to superhero.name, superhero %></li>
+<% end %>
+</ul>
+
+<h1>Become Sidekick To Another Superhero</h1>
+<%= form_for @team do |f| %>
+    <%= f.collection_select :main_character_id, Superhero.all, :id, :name %>
+    <%= f.hidden_field :cameo_character_id, :value => @superhero.id %>
+<%#sidekick character id%>
+    <%= f.submit %>
+<% end %>
+
 
 <%= link_to "Edit this Superhero", edit_superhero_path(@superhero) %>
 <%= link_to "See All Superheroes", superheros_path %>

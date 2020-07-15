@@ -7,6 +7,7 @@ class SuperherosController < ApplicationController
     end
 
     def show
+        @team = Team.new
         render 'show'
     end
 
