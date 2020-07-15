@@ -1,0 +1,9 @@
+<h1>Hall of Justice ⚖️</h1>
+
+<ul>
+<% @superheros.each do |superhero|%>
+    <li><%= link_to superhero.name, superhero %></li>
+<% end %>
+</ul>
+
+<%= link_to "Create New Superhero", new_superhero_path %>

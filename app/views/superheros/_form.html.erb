@@ -1,0 +1,22 @@
+<% if flash[:errors] %>
+    <ul><% flash[:errors].each do |error|%>
+        <li><%=error%></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @superhero do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :power %>
+<%= f.text_field :power %><br>
+<%= f.label :weakness %>
+<%= f.text_field :weakness %><br>
+<%= f.label :power_level %>
+<%= f.number_field :power_level, in:(1..10) %><br>
+<%= f.label :good %>
+<%= check_box("superhero", "good", {}, 1, 0) %><br>
+<%= f.submit %>
+<% end %>
+
+<%= link_to "Back to all Superheroes", superheros_path %>
