@@ -3,6 +3,7 @@
 <p>Weakness: <%= @superhero.weakness %></p>
 <p>Power Level: <%= "💪"*@superhero.power_level %></p>
 <p><%= @superhero.good ? "This superhero stands on the side of justice" : "This superhero might be an anti-hero sometimes in the 90s, or might have some heel turns." %></p>
+<p>Team: <%= @superhero.team.name %> </p>
 
 <%= link_to "Edit this Superhero", edit_superhero_path(@superhero) %>
 <%= link_to "See All Superheroes", superheros_path %>

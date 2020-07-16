@@ -2,6 +2,7 @@ class Superhero < ApplicationRecord
     validates :name, :power, :weakness, :power_level, presence: true
     validates :power_level, inclusion: { in: (1..10), message: "%{value} is an invalid power level. %{attribute} levels must be between 1-10."}
     validate :doctor_doom_blocker
+    belongs_to :team
     # validates does rails' built in validation methods
     # validate does your own validation method
     # validates_with is useful

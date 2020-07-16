@@ -16,6 +16,9 @@
 <%= f.number_field :power_level, in:(1..10) %><br>
 <%= f.label :good %>
 <%= check_box("superhero", "good", {}, 1, 0) %><br>
+<%= f.label :team %>
+<%= f.collection_select :team_id, Team.all, :id, :name %>
+
 <%= f.submit %>
 <% end %>
 

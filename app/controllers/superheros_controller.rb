@@ -57,7 +57,7 @@ class SuperherosController < ApplicationController
     end
 
     def strong_params
-        params.require(:superhero).permit(:name, :power, :weakness, :power_level, :good)
+        params.require(:superhero).permit(:name, :power, :weakness, :power_level, :good, :team_id)
     end
 
 end
