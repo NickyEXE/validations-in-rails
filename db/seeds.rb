@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Superheroes:
+
 Superhero.create(name: "America Chavez", power: "Punching through dimensions", weakness: "Authority", power_level: 7, good: true)
 Superhero.create(name: "Squirrel Girl", power: "Eating Nuts and Kicking Butts", weakness: "Bad database structures", power_level: 10, good: true)
 Superhero.create(name: "Sue Storm", power: "Invisibility, energy fields", weakness: "Reed", power_level: 7, good: true)
