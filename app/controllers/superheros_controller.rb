@@ -11,7 +11,7 @@ class SuperherosController < ApplicationController
     end
 
     def new
-        @superhero = Superhero.new
+        @superhero = Superhero.new(flash[:superhero])
         render 'new'
     end
 
@@ -24,6 +24,7 @@ class SuperherosController < ApplicationController
         if @superhero.save
             redirect_to @superhero
         else
+            flash[:superhero] = strong_params
             flash[:errors] = @superhero.errors.full_messages
             redirect_to new_superhero_path
         end
