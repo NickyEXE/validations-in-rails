@@ -1,4 +1,7 @@
 class Superhero < ApplicationRecord
+    has_many :superhero_teams, dependent: :delete_all
+    has_many :teams, through: :superhero_teams
+
     validates :name, :power, :weakness, :power_level, presence: true
     validates :power_level, inclusion: { in: (1..10), message: "%{value} is an invalid power level. %{attribute} levels must be between 1-10."}
     validate :doctor_doom_blocker
